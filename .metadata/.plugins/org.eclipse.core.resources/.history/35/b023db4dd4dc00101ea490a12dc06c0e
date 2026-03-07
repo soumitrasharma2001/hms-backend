@@ -1,0 +1,23 @@
+package com.hms.appointment.service;
+
+import java.util.List;
+
+import org.jspecify.annotations.Nullable;
+import org.springframework.stereotype.Service;
+
+import com.hms.appointment.dto.AppointmentDTO;
+import com.hms.appointment.dto.AppointmentDetails;
+import com.hms.appointment.exception.HmsException;
+
+@Service
+public interface AppointmentService {
+	AppointmentDTO scheduleAppointment(AppointmentDTO appointmentDTO) throws HmsException;
+	void cancelAppointment(Long appointmentId) throws HmsException;
+	void completeAppointment(Long appointmentId);
+	void rescheduleAppointment(Long appointmentId,String newDateTime);
+	AppointmentDTO getAppointmentDetails(Long appointmentId) throws HmsException;
+	AppointmentDetails getAppointmentDetailsWithName(Long appointmentId) throws HmsException;
+	List<AppointmentDetails> getAllAppointmentsByPatientId(Long appointmentId) throws HmsException;
+	AppointmentDTO update(AppointmentDTO details);
+	List<AppointmentDetails> getAllAppointmentsByDoctorId(Long doctorId) throws HmsException;
+}
