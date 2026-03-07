@@ -2,4 +2,3 @@ spring.application.name=EurekaServer
 server.port:8761
 eureka.client.register-with-eureka=false
 eureka.client.fetch-registry=false
-eureka.instance.hostname=https://hms-eureka-l3z6.onrender.com/
